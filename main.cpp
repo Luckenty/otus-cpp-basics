@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
   std::string user_name;
   std::cin >> user_name;
 
-  int attempts_count = guess_number(get_random_value());
+  const int attempts_count = guess_number(get_random_value());
 
   write_new_highscore(user_name, attempts_count);
 

@@ -4,7 +4,8 @@
 
 const std::string high_scores_filename = "high_scores.txt";
 
-int write_new_highscore(const std::string user_name, const int attempts_count) {
+int write_new_highscore(const std::string &user_name,
+                        const int attempts_count) {
   std::ofstream out_file{high_scores_filename, std::ios_base::app};
   if (!out_file.is_open()) {
     std::cout << "Failed to open file for write: " << high_scores_filename
