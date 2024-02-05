@@ -4,7 +4,6 @@ int guess_number(const int target_value) {
 
   int current_value = 0;
   bool not_win = true;
-  std::cout << "target_value = " << target_value << std::endl;
   std::cout << "Enter your guess:" << std::endl;
 
   int attempts_count = 0;
