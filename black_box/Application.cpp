@@ -6,9 +6,7 @@
 
 Application::Application(const char* name)
     : window{{1280u, 960u},
-             name,
-             sf::Style::Titlebar | sf::Style::Close,
-             sf::ContextSettings(0, 0, 4)},
+             name},
       view({0., 0.}, 1280, 960, 0.2) {}
 
 void Application::run(World& world) {
