@@ -5,8 +5,8 @@
  * Задает скорость объекта
  * @param velocity новое значение скорости
  */
-void Ball::setVelocity(const Velocity& velocity) {
-    this->velocity=velocity;
+void Ball::setVelocity(const Velocity &velocity) {
+    this->velocity = velocity;
 }
 
 /**
@@ -24,16 +24,16 @@ Velocity Ball::getVelocity() const {
  * Рисование выполняется путем вызова painter.draw(...)
  * @param painter контекст отрисовки
  */
-void Ball::draw(Painter& painter) const {
-    painter.draw(center,radius,Color(0,0,0));
+void Ball::draw(Painter &painter) const {
+    painter.draw(center, radius, Color(0, 0, 0));
 }
 
 /**
  * Задает координаты центра объекта
  * @param center новый центр объекта
  */
-void Ball::setCenter(const Point& center) {
-    this->center=center;
+void Ball::setCenter(const Point &center) {
+    this->center = center;
 }
 
 /**
@@ -60,5 +60,5 @@ double Ball::getRadius() const {
  * эквивалентна объему: PI * radius^3 * 4. / 3.
  */
 double Ball::getMass() const {
-    return mass;
+    return 3.14 * pow(radius, 3.0) * 4. / 3;
 }

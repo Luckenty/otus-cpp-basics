@@ -11,8 +11,7 @@ static constexpr double timePerTick = 0.001;
  * Конструирует объект мира для симуляции
  * @param worldFilePath путь к файлу модели мира
  */
-World::World(const std::string& worldFilePath) {
-
+World::World(const std::string &worldFilePath) {
     std::ifstream stream(worldFilePath);
     /**
      * TODO: хорошее место для улучшения.
@@ -64,7 +63,9 @@ World::World(const std::string& worldFilePath) {
         // Здесь не хватает самого главного - создания
         // объекта класса Ball со свойствами, прочитанными
         // выше, и его помещения в контейнер balls
-        auto ball = Ball(Velocity(vx, vy), Point(x, y), radius,
+        auto velocity = Velocity(vx, vy);
+        auto point = Point(x, y);
+        auto ball = Ball(velocity, point, radius,
                          Color(red, green, blue));
         // После того как мы каким-то образом
         // сконструируем объект Ball ball;
@@ -74,13 +75,13 @@ World::World(const std::string& worldFilePath) {
 }
 
 /// @brief Отображает состояние мира
-void World::show(Painter& painter) const {
+void World::show(Painter &painter) const {
     // Рисуем белый прямоугольник, отображающий границу
     // мира
     painter.draw(topLeft, bottomRight, Color(1, 1, 1));
 
     // Вызываем отрисовку каждого шара
-    for (const Ball& ball : balls) {
+    for (const Ball &ball: balls) {
         ball.draw(painter);
     }
 }
