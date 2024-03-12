@@ -28,6 +28,6 @@ private:
     Velocity &velocity;
     Point &center;
     double radius;
-    double mass = 3.14 * std::pow(radius, 3) * 4. / 3;
+    double mass;
     Color color;
 };

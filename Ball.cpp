@@ -25,7 +25,8 @@ Velocity Ball::getVelocity() const {
  * @param painter контекст отрисовки
  */
 void Ball::draw(Painter &painter) const {
-    painter.draw(center, radius, Color(0, 0, 0));
+    auto color = Color(0, 0, 0);
+    painter.draw(center, radius, color);
 }
 
 /**
