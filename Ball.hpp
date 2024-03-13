@@ -9,7 +9,6 @@ public:
         : velocity(velocity), center(center), radius(radius), color(color) {
     }
 
-
     void setVelocity(const Velocity &velocity);
 
     Velocity getVelocity() const;
@@ -25,8 +24,8 @@ public:
     double getMass() const;
 
 private:
-    Velocity &velocity;
-    Point &center;
+    Velocity velocity;
+    Point center;
     double radius;
     double mass;
     Color color;
