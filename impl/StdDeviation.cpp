@@ -1,14 +1,13 @@
-#ifndef STD_H
-#define STD_H
-
 #include <vector>
 #include <cmath>
 
 #include "IStatistics.h"
 
-class Std : public IStatistics {
+class StdDeviation : public IStatistics {
 public:
-    Std() : sum{0.}, quantity{0} {
+    StdDeviation(double sum, int quantity)
+        : sum(sum),
+          quantity(quantity) {
     }
 
     void update(double next) override {
@@ -41,5 +40,3 @@ private:
     double sum;
     int quantity;
 };
-
-#endif //STD_H

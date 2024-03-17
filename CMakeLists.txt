@@ -12,7 +12,8 @@ add_executable(statistics statistics.cpp
         impl/IStatistics.h
         impl/Min.h
         impl/Max.h
-        impl/Mean.h
-        impl/Std.h)
+        impl/ArithmeticMean.h
+        impl/StdDeviation.h
+        impl/StdDeviation.cpp)
 set_target_properties(statistics PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
 

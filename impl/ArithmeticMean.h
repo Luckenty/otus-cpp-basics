@@ -3,9 +3,9 @@
 
 #include "IStatistics.h"
 
-class Mean : public IStatistics {
+class ArithmeticMean : public IStatistics {
 public:
-    Mean() : sum{0.}, quantity{0} {
+    ArithmeticMean() : sum{0.}, quantity{0} {
     }
 
     void update(double next) override {

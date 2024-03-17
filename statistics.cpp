@@ -3,9 +3,9 @@
 #include <cstdio>
 #include "impl/IStatistics.h"
 #include "impl/Max.h"
-#include "impl/Mean.h"
+#include "impl/ArithmeticMean.h"
 #include "impl/Min.h"
-#include "impl/Std.h"
+#include "impl/StdDeviation.h"
 
 int main() {
     const size_t statistics_count = 4;
@@ -13,8 +13,8 @@ int main() {
 
     statistics[0] = new Min{};
     statistics[1] = new Max{};
-    statistics[2] = new Mean{};
-    statistics[3] = new Std{};
+    statistics[2] = new ArithmeticMean{};
+    statistics[3] = new StdDeviation{0., 0};
 
     // try to ignore SIGHUP on Linux
     std::signal(SIGHUP,SIG_IGN);
