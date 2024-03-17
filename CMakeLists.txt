@@ -8,6 +8,11 @@ set_target_properties(random_shuffle PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQ
 add_executable(chrono_example chrono_example.cpp)
 set_target_properties(chrono_example PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
 
-add_executable(statistics statistics.cpp)
+add_executable(statistics statistics.cpp
+        impl/IStatistics.h
+        impl/Min.h
+        impl/Max.h
+        impl/Mean.h
+        impl/Std.h)
 set_target_properties(statistics PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
 
