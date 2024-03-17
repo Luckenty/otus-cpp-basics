@@ -1,27 +1,19 @@
 #ifndef MAX_H
 #define MAX_H
+
 #include <limits>
 
 #include "IStatistics.h"
 
 class Max : public IStatistics {
 public:
-    Max() : max{std::numeric_limits<double>::min()} {
-    }
+    Max();
 
-    void update(double next) override {
-        if (next > max) {
-            max = next;
-        }
-    }
+    void update(double next) override;
 
-    double eval() const override {
-        return max;
-    }
+    double eval() const override;
 
-    const char* name() const override {
-        return "max";
-    }
+    const char* name() const override;
 
 private:
     double max;

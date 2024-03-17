@@ -6,22 +6,13 @@
 
 class Min : public IStatistics {
 public:
-    Min() : m_min{std::numeric_limits<double>::max()} {
-    }
+    Min();
 
-    void update(double next) override {
-        if (next < m_min) {
-            m_min = next;
-        }
-    }
+    void update(double next) override;
 
-    double eval() const override {
-        return m_min;
-    }
+    double eval() const override;
 
-    const char* name() const override {
-        return "min";
-    }
+    const char* name() const override;
 
 private:
     double m_min;

@@ -2,6 +2,9 @@
 #include <cmath>
 #include "StdDeviation.h"
 
+StdDeviation::StdDeviation(): sum{0.}, quantity{0} {
+}
+
 void StdDeviation::update(double next) {
     numbers.push_back(next);
     sum += next;
