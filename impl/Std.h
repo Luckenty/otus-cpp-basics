@@ -2,6 +2,7 @@
 #define STD_H
 
 #include <vector>
+#include <cmath>
 
 #include "IStatistics.h"
 
@@ -18,8 +19,15 @@ public:
 
     double eval() const override {
         if (quantity != 0) {
-            auto mean = sum / quantity;
-            return sum / quantity;
+            // среднее арифметическое
+            double mean = sum / quantity;
+            double exp_sum = 0;
+            // Вычисляем квадрат отклонений чисел от их средней оценки и суммируем
+            for (int i = 0; i < numbers.size(); ++i) {
+                exp_sum += std::pow((numbers[i] - mean), 2);
+            }
+            // возвращаем стандартное отклонение
+            return sqrt(exp_sum / quantity);
         }
         return 0;
     }
