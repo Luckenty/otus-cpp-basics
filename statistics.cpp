@@ -14,7 +14,7 @@ int main() {
     statistics[0] = new Min{};
     statistics[1] = new Max{};
     statistics[2] = new ArithmeticMean{};
-    statistics[3] = new StdDeviation{0., 0};
+    statistics[3] = new StdDeviation();
 
     // try to ignore SIGHUP on Linux
     std::signal(SIGHUP,SIG_IGN);

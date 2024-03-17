@@ -6,7 +6,7 @@
 
 class StdDeviation : public IStatistics {
 public:
-    StdDeviation(double sum, int quantity);
+    StdDeviation() = default;
 
     void update(double next) override;
 
@@ -16,8 +16,8 @@ public:
 
 private:
     std::vector<double> numbers;
-    double sum;
-    int quantity;
+    double sum = 0.;
+    int quantity = 0;
 };
 
 #endif //STD_H
