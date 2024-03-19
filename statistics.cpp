@@ -11,9 +11,9 @@ int main() {
     const size_t statistics_count = 4;
     IStatistics* statistics[statistics_count];
 
-    statistics[0] = new Min{};
-    statistics[1] = new Max{};
-    statistics[2] = new ArithmeticMean{};
+    statistics[0] = new Min();
+    statistics[1] = new Max();
+    statistics[2] = new ArithmeticMean();
     statistics[3] = new StdDeviation();
 
     // try to ignore SIGHUP on Linux

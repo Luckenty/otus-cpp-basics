@@ -1,6 +1,6 @@
 #include "Max.h"
 
-Max::Max() : max{std::numeric_limits<double>::min()} {
+Max::Max() : max{std::numeric_limits<double>::lowest()} {
 }
 
 void Max::update(double next) {
