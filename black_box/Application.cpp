@@ -40,7 +40,7 @@ void Application::updateWorld(World& world) {
 
     totalTime += delta;
 
-    if (totalTime < 100.) {
+    if (totalTime < 10.) {
         world.update(delta);
     }
 }
