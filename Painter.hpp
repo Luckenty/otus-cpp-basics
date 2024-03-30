@@ -15,14 +15,14 @@ class Painter {
     Painter(sf::RenderWindow& window, const View& view);
     ~Painter();
     /**
-     * Рисует круг цвета color
+     * Рисует круг цвета _color
      * @param center центр круга
      * @param radius радиус круга
      * @param color цвет заливки
      */
     void draw(const Point& center, double radius, const Color& color);
     /**
-     * Рисует прямоугольник цвета color
+     * Рисует прямоугольник цвета _color
      * @param topLeft координата верхнего левого угла
      * @param bottomRight координата нижнего правого угла
      * @param color цвет заливки

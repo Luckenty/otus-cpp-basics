@@ -63,7 +63,7 @@ World::World(const std::string &worldFilePath) {
         // Здесь не хватает самого главного - создания
         // объекта класса Ball со свойствами, прочитанными
         // выше, и его помещения в контейнер balls
-        auto velocity = Velocity(vx, vy);
+        auto velocity = Velocity(Point(vx, vy));
         auto point = Point(x, y);
         auto ball = Ball(velocity, point, radius,
                          Color(red, green, blue));

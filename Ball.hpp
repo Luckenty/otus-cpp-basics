@@ -2,11 +2,12 @@
 #include "Painter.hpp"
 #include "Point.hpp"
 #include "Velocity.hpp"
+#include "cmath"
 
 class Ball {
 public:
     Ball(Velocity &velocity, Point &center, double radius, const Color &color)
-        : velocity(velocity), center(center), radius(radius), color(color) {
+        : _velocity(velocity), _center(center), _radius(radius), _color(color) {
     }
 
     void setVelocity(const Velocity &velocity);
@@ -24,9 +25,9 @@ public:
     double getMass() const;
 
 private:
-    Velocity velocity;
-    Point center;
-    double radius;
-    double mass;
-    Color color;
+    Velocity _velocity;
+    Point _center;
+    double _radius;
+    double _mass = 3.14 * pow(_radius, 3.0) * 4. / 3;
+    Color _color;
 };

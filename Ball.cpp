@@ -1,19 +1,18 @@
 #include "Ball.hpp"
-#include <cmath>
 
 /**
  * Задает скорость объекта
  * @param velocity новое значение скорости
  */
 void Ball::setVelocity(const Velocity &velocity) {
-    this->velocity = velocity;
+    this->_velocity = velocity;
 }
 
 /**
  * @return скорость объекта
  */
 Velocity Ball::getVelocity() const {
-    return velocity;
+    return _velocity;
 }
 
 /**
@@ -25,8 +24,7 @@ Velocity Ball::getVelocity() const {
  * @param painter контекст отрисовки
  */
 void Ball::draw(Painter &painter) const {
-    auto color = Color(0, 0, 0);
-    painter.draw(center, radius, color);
+    painter.draw(_center, _radius, _color);
 }
 
 /**
@@ -34,14 +32,14 @@ void Ball::draw(Painter &painter) const {
  * @param center новый центр объекта
  */
 void Ball::setCenter(const Point &center) {
-    this->center = center;
+    this->_center = center;
 }
 
 /**
  * @return центр объекта
  */
 Point Ball::getCenter() const {
-    return center;
+    return _center;
 }
 
 /**
@@ -50,7 +48,7 @@ Point Ball::getCenter() const {
  * не требуется
  */
 double Ball::getRadius() const {
-    return radius;
+    return _radius;
 }
 
 /**
@@ -58,8 +56,8 @@ double Ball::getRadius() const {
  * @details В нашем приложении считаем, что все шары
  * состоят из одинакового материала с фиксированной
  * плотностью. В этом случае масса в условных единицах
- * эквивалентна объему: PI * radius^3 * 4. / 3.
+ * эквивалентна объему: PI * _radius^3 * 4. / 3.
  */
 double Ball::getMass() const {
-    return 3.14 * pow(radius, 3.0) * 4. / 3;
+    return _mass;
 }
