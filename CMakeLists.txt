@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(hello_world)
+project(containers)
 
-add_executable(hello_world
+add_executable(containers
         main.cpp
+        MyContainer.cpp
+        MyContainer.h
 )
 
-set_target_properties(hello_world PROPERTIES
+set_target_properties(containers PROPERTIES
         CXX_STANDARD 17
         CXX_STANDARD_REQUIRED ON
 )
