@@ -4,7 +4,6 @@ project(containers)
 
 add_executable(containers
         main.cpp
-        MyContainer.cpp
         MyContainer.h
 )
 
