@@ -2,8 +2,9 @@
 #include <iostream>
 
 #include "MyContainer.h"
+#include "MyList.h"
 
-int main(int argc, char **argv) {
+void container_test() {
     // 1. создание объекта контейнера для хранения объектов типа int
     MyContainer<int> container;
     // 2. добавление в контейнер десяти элементов (0, 1 … 9)
@@ -61,6 +62,20 @@ int main(int argc, char **argv) {
         std::cout << container[i] << " ";
     }
     std::cout << std::endl;
+}
+
+void list_test() {
+    // 1. создание объекта контейнера для хранения объектов типа int
+    MyList<int> container;
+    // 2. добавление в контейнер десяти элементов (0, 1 … 9)
+
+}
+
+int main(int argc, char **argv) {
+
+    container_test();
+
+    list_test();
 
     return 0;
 }
