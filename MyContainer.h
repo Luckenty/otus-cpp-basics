@@ -1,84 +1,35 @@
-#ifndef MYCONTAINER_H
-#define MYCONTAINER_H
+#pragma once
 
-template<typename T>
+template<class T>
 class MyContainer {
 public:
-    MyContainer() : m_size(0), m_capacity(5), m_data(new T[m_capacity]) {
-    }
+    MyContainer();
 
-    MyContainer(int size)
-            : m_size(size), m_capacity(size * 2), m_data(new T[m_capacity]) {
-    }
+    MyContainer(size_t size);
 
-    MyContainer(const MyContainer &other)
-            : m_size(other.m_size), m_capacity(other.m_capacity),
-              m_data(new T[m_capacity]) {
-        for (int i = 0; i < m_size; i++) { m_data[i] = other.m_data[i]; }
-    }
+    MyContainer(const MyContainer &other);
 
-    ~MyContainer() {
-        delete[] m_data;
-    }
+    ~MyContainer();
 
-    void push_back(const T &val) {
-        if (m_size >= m_capacity) {
-            increase_capacity(m_capacity * 2);
-        }
-        m_data[m_size++] = val;
-    }
+    void push_back(const T &val);
 
-    void insert(const T &val, int index) {
-        if (index < 0 || index > m_size) {
-            return;
-        }
+    void insert(const T &val, int index);
 
-        if (m_size >= m_capacity) {
-            increase_capacity(m_capacity * 2);
-        }
+    void erase(int index);
 
-        for (int i = m_size - 1; i >= index; i--) {
-            m_data[i + 1] = m_data[i];
-        }
+    void increase_capacity(size_t newCapacity);
 
-        m_data[index] = val;
-        m_size++;
-    }
+    [[nodiscard]] size_t size() const;
 
-    void erase(int index) {
-        if (index < 0 || index > m_size) {
-            return;
-        }
-
-        for (int i = index; i < m_size; i++) {
-            m_data[i] = m_data[i + 1];
-        }
-        m_size--;
-    }
-
-    void increase_capacity(int newCapacity) {
-        T *newData = new T[newCapacity];
-        for (int i = 0; i < m_size; i++) {
-            newData[i] = m_data[i];
-        }
-
-        delete[] m_data;
-        m_data = newData;
-        m_capacity = newCapacity;
-    }
-
-    int size() const {
-        return m_size;
-    }
-
-    T &operator[](int index) {
-        return m_data[index];
-    }
+    T &operator[](int index);
 
 private:
-    size_t m_size;
-    size_t m_capacity;
+    static constexpr size_t ARRAY_CAPACITY = 5;
+    static constexpr size_t ARRAY_INIT_SIZE = 0;
+
+    size_t m_size = ARRAY_INIT_SIZE;
+    size_t m_capacity = ARRAY_CAPACITY;
     T *m_data;
 };
 
-#endif //MYCONTAINER_H
+#include "MyContainer.inl"

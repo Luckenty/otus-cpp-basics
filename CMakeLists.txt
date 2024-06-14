@@ -5,7 +5,9 @@ project(containers)
 add_executable(containers
         main.cpp
         MyContainer.h
+        MyContainer.inl
         MyList.h
+        MyList.inl
 )
 
 set_target_properties(containers PROPERTIES
