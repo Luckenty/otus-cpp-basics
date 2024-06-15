@@ -2,6 +2,8 @@
 
 #include <cstddef>
 
+constexpr size_t list_init_size = 0;
+
 template<class T>
 class MyList {
 public:
@@ -26,11 +28,9 @@ public:
     [[nodiscard]] size_t size() const;
 
 private:
-    static constexpr size_t LIST_INIT_SIZE = 0;
-
     Node *m_first;
     Node *m_last;
-    std::size_t m_size = LIST_INIT_SIZE;
+    std::size_t m_size = list_init_size;
 };
 
 #include "MyList.inl"

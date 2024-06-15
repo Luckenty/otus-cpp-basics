@@ -1,5 +1,8 @@
 #pragma once
 
+constexpr size_t array_capacity = 5;
+constexpr size_t array_init_capacity = 0;
+
 template<class T>
 class MyContainer {
 public:
@@ -24,11 +27,8 @@ public:
     T &operator[](int index);
 
 private:
-    static constexpr size_t ARRAY_CAPACITY = 5;
-    static constexpr size_t ARRAY_INIT_SIZE = 0;
-
-    size_t m_size = ARRAY_INIT_SIZE;
-    size_t m_capacity = ARRAY_CAPACITY;
+    size_t m_size = array_init_capacity;
+    size_t m_capacity = array_capacity;
     T *m_data;
 };
 
