@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstddef>
+
 constexpr size_t array_capacity = 5;
 constexpr size_t array_init_capacity = 0;
 
