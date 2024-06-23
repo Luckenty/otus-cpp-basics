@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(hello_world)
+project(multithreading)
 
-add_executable(hello_world
-        main.cpp
+add_executable(multithreading
+        topk_words.cpp
 )
 
-set_target_properties(hello_world PROPERTIES
+set_target_properties(multithreading PROPERTIES
         CXX_STANDARD 17
         CXX_STANDARD_REQUIRED ON
 )
